@@ -66,7 +66,9 @@ void Application::event_loop()
         {
            focus->mouse_ev(ev);
            focus->key_ev(ev, focus);
-           if(focus->gombnyomas(ev)=="Start")
+           if(focus->lathato_e())
+           {
+               if(focus->gombnyomas(ev)=="Start")
            {
                for(unsigned int i=0; i<ossz_widget.size(); i++)
                {
@@ -125,7 +127,6 @@ void Application::event_loop()
            }
            if(focus->gombnyomas(ev) == "Ellenorizd a megoldast" )
            {
-            gout<<color(0,0,0)<<box(X, Y);
             vege=true;
             for(unsigned int i=0; i<ossz_widget.size(); i++)
             {
@@ -135,6 +136,7 @@ void Application::event_loop()
             vissza->lathatova();
            }
         }
+           }
         if(jatekmester.kitoltve(widgets)&&megoldas->lathato_e())
        {
          ellenorizz->lathatova();
@@ -158,14 +160,6 @@ void Application::event_loop()
              if(ossz_widget[i]->lathato_e())
             {
                 ossz_widget[i]->rajzol();
-            }
-        }
-        if(widgets[0][0]->lathato)
-        {
-            for(unsigned int i=1;i<3;i++)
-            {
-                gout<<move_to(0,(i*3*widgets[0][0]->m)-2)<<color(0,0,0)<<box(X,4);
-                gout<<move_to((i*3*((widgets[0][0]->sz)/4*5+2))-2,0)<<box(4,Y);
             }
         }
         if(kival->lathato_e())

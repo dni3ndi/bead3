@@ -21,7 +21,7 @@ void GombWidget::rajzol()
 
 string GombWidget::gombnyomas(event& ev)
 {
-    if(ev.type==ev_mouse && ev.button==btn_left)
+    if(ev.type==ev_mouse && ev.button==btn_left && ev.pos_x>=x && ev.pos_y>=y && ev.pos_x<=x+sz && ev.pos_y<=y+m)
     {
         return szoveg;
     }

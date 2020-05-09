@@ -33,6 +33,18 @@ void Szam_widget::rajzol()
         gout<<move_to(x+sz+2, y)<<color(255,218,185)<<box(sz/4, m)<<move_to(x+sz+3, y+1)<<color(240,230,140)<<box(sz/4-2,m-2);
         gout<<move_to(x+sz+4, y+(m/2.2))<<color(0,0,0)<<line_to(x+sz+4+(sz/4-2)/3, y+(m/4))<<line_to(x+sz+4.5+((sz/4-2)/4*3), y+(m/2.2));
         gout<<move_to(x+sz+4, y+(m-m/2.2))<<line_to(x+sz+4+(sz/4-2)/3, y+m/4*3)<<line_to(x+sz+4.5+((sz/4-2)/4*3), y+(m-m/2.2));
+
+        for(unsigned int i=1; i<3; i++)
+        {
+            if(x+50== 150*i)
+            {
+                gout<<move_to(x+47, y)<<color(0,0,0)<<box(3, sz+3+sz/4);
+            }
+            if((y+m)== 150*i)
+            {
+                gout<<move_to(x, y+m-2)<<color(0,0,0)<<box(sz+2+sz/4,2);
+            }
+        }
     }
 int Szam_widget::getNumber()
     {
